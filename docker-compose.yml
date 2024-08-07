@@ -12,3 +12,9 @@ services:
       - "9001:9001"  # MinIO 관리 콘솔 포트 (선택사항)
     command: server /data --console-address ":9001"
     restart: always  # 컨테이너가 중지되면 항상 재시작
+    networks:
+      - proxynet
+
+networks:
+  proxynet:
+    external: true
